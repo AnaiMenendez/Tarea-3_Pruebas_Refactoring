@@ -13,7 +13,7 @@ import com.example.Patron_Builder_Mascota.MascotaBuilder;
 public class RestriccionTest {
     @Test
     @DisplayName("PU-23 - Restricción debe rechazar mascota de raza prohibida")
-    void PU23_validarRaza() {
+    void validarRaza() {
 
         Mascota pitbull =
                 new MascotaBuilder()

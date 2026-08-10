@@ -15,7 +15,7 @@ public class UsuarioTest {
     
     @Test
     @DisplayName("PU-09 - Usuario debe registrar una mascota válida")
-    void PU09_registrarMascota() {
+    void registrarMascota() {
 
         Usuario usuario = new Usuario();
 

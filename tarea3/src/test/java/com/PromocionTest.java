@@ -12,7 +12,7 @@ import com.example.Promocion;
 public class PromocionTest {
     @Test
     @DisplayName("PU-12 - Promoción debe calcular correctamente el descuento")
-    void PU12_aplicarPromocion() {
+    void aplicarPromocion() {
 
         Promocion promocion = new Promocion(
                 1,

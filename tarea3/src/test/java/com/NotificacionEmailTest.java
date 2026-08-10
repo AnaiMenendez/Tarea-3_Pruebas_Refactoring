@@ -15,7 +15,7 @@ public class NotificacionEmailTest {
     
     @Test
     @DisplayName("PU-13 - Notificación Email debe generar mensaje de correo")
-    void PU13_actualizar() {
+    void actualizar() {
 
         NotificacionEmail notificacion =
                 new NotificacionEmail("cliente@email.com");

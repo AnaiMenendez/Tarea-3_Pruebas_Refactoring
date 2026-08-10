@@ -11,7 +11,7 @@ import com.example.Paseo;
 public class PaseoTest {
     @Test
     @DisplayName("PU-04 - Paseo debe devolver su precio base")
-    void PU04_calcularPrecio() {
+    void calcularPrecio() {
 
         Paseo paseo = new Paseo(15.0);
 

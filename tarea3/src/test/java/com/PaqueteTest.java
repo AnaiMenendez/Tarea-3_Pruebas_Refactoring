@@ -13,7 +13,7 @@ import com.example.Paseo;
 public class PaqueteTest {
     @Test
     @DisplayName("PU-05 - Paquete debe calcular precio con descuento")
-    void PU05_calcularPrecioConDescuento() throws Exception {
+    void calcularPrecioConDescuento() throws Exception {
         Paquete paquete = new Paquete();
 
         Guarderia guarderia = new Guarderia(20.0);

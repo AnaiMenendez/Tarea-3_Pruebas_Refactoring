@@ -16,7 +16,7 @@ public class RecurrenciaSemanalStrategyTest {
 
     @Test
     @DisplayName("PU-08 - Debe generar las fechas correspondientes a los martes")
-    void PU08_calcularFechasSemanales() {
+    void calcularFechasSemanales() {
 
         Set<DayOfWeek> dias =
                 Set.of(DayOfWeek.TUESDAY);

@@ -10,7 +10,7 @@ import com.example.Entrenamiento;
 public class EntrenamientoTest {
     @Test
     @DisplayName("PU-25 - Entrenamiento debe devolver false para fecha nula")
-    void PU25_fechaNula() {
+    void fechaNula() {
 
         Entrenamiento entrenamiento =
                 new Entrenamiento();

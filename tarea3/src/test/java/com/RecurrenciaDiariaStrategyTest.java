@@ -23,7 +23,7 @@ public class RecurrenciaDiariaStrategyTest {
 
     @Test
     @DisplayName("PU-07 - Debe generar las fechas diarias del rango")
-    void PU07_calcularFechasDiarias() {
+    void calcularFechasDiarias() {
 
         LocalDate inicio =
                 LocalDate.of(2026, 9, 1);

@@ -13,7 +13,7 @@ public class DecoradorBanoTest {
 
     @Test
     @DisplayName("PU-06 - Baño debe sumar el costo extra")
-    void PU06_calcularPrecio() {
+    void calcularPrecio() {
 
         IServicio guarderia =
                 new Guarderia(20.0);

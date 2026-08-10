@@ -10,7 +10,7 @@ import com.example.PagoTarjeta;
 public class PagoTarjetaTest {
     @Test
     @DisplayName("PU-14 - Pago con tarjeta debe procesarse correctamente")
-    void PU14_procesarPago() {
+    void procesarPago() {
 
         PagoTarjeta pago =
                 new PagoTarjeta();
