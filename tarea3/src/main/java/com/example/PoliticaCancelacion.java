@@ -14,4 +14,8 @@ public class PoliticaCancelacion {
     public boolean esCancelable(int horasRestantes) {
         return horasRestantes >= this.tiempoLimiteHoras;
     }
+
+    public PoliticaCancelacion(int tiempoLimiteHoras) {
+        this.tiempoLimiteHoras = tiempoLimiteHoras;
+    }
 }

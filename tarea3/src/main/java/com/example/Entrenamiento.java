@@ -23,6 +23,11 @@ public class Entrenamiento implements IServicio {
 
     @Override
     public boolean verificarDisponibilidad(LocalDate fecha) {
+        
+        if (fecha == null) {
+            return false;
+        }
+
         EstadoDisponibilidad estado =historialEstados.getOrDefault(fecha, EstadoDisponibilidad.DISPONIBLE);
 
         return estado == EstadoDisponibilidad.DISPONIBLE;

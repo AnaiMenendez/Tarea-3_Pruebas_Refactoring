@@ -9,6 +9,8 @@ public class Paquete {
     private String nombre;
     private String tipo;
     private double descuento;
+    
+
     private List<IServicio> servicios = new ArrayList<>();
 
     public double calcularPrecio() {
@@ -30,5 +32,13 @@ public class Paquete {
         if (!this.servicios.contains(servicio)) {
             this.servicios.add(servicio);
         }
+    }
+
+    public double getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(double descuento) {
+        this.descuento = descuento;
     }
 }

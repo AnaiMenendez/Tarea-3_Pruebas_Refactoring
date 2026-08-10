@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.Patron_Builder_Mascota.Mascota;
@@ -11,8 +12,8 @@ public class Usuario {
     private String nombre;
     private String correo;
     private String telefono;
-    private List<Reserva> reservas;
-    private List<Mascota> mascotas;
+    private List<Reserva> reservas= new ArrayList<>();;
+    private List<Mascota> mascotas= new ArrayList<>();;
 
     public void registrarMascota(Mascota mascota) {
         if (mascota == null) {

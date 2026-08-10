@@ -17,4 +17,8 @@ public class Incidente {
     public void reportar() {
         System.out.println("Reporte de incidente en proceso...");
     }
+
+    public EstadoIncidente getEstado() {
+        return estado;
+    }
 }

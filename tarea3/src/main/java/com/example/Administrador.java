@@ -10,6 +10,10 @@ public class Administrador {
     private String nombre;
     private List<Centro> centrosAdministrados=new ArrayList<>();
 
+    public void agregarCentro(Centro centro) {
+        centrosAdministrados.add(centro);
+    }
+
     public void crearPromocion(Promocion promocion, Centro centro) {
         if (!this.centrosAdministrados.contains(centro)) {
             System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());

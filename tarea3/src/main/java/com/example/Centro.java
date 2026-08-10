@@ -83,6 +83,10 @@ public class Centro {
         this.promocionesVigentes.add(promocion);
     }
 
+    public List<Promocion> getPromocionesVigentes() {
+        return promocionesVigentes;
+    }
+
     public void eliminarPromocion(Promocion promocion) {
         if (!promocionesVigentes.contains(promocion)) {
             return;
@@ -118,6 +122,14 @@ public class Centro {
 
     public List<IServicio> getServicios() {
         return servicios;
+    }
+
+    public LocalTime getHoraApertura() {
+    return horaApertura;
+    }
+
+    public LocalTime getHoraCierre() {
+        return horaCierre;
     }
 
     public void setHorario(LocalTime horaApertura, LocalTime horaCierre) {

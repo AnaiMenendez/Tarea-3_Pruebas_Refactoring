@@ -124,7 +124,7 @@ public class Reserva {
         return fechaInicio;
     }
 
-    void setFechaInicio(LocalDate fechaInicio) {
+    public void setFechaInicio(LocalDate fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
@@ -132,7 +132,7 @@ public class Reserva {
         return fechaFin;
     }
 
-    void setFechaFin(LocalDate fechaFin) {
+    public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
     }
 
