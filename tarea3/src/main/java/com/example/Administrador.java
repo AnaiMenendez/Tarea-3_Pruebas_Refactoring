@@ -19,7 +19,6 @@ public class Administrador {
             System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
             return;
         }
-
         centro.agregarPromocion(promocion);
         System.out.println("¡Promoción agregada con éxito al centro: " + centro.getNombre() + "!");
     }
@@ -29,7 +28,6 @@ public class Administrador {
             System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
             return;
         }
-
         centro.agregarRestriccion(restriccion);
         System.out.println("¡Restricción añadida con éxito al centro: " + centro.getNombre() + "!");
     }
@@ -39,7 +37,6 @@ public class Administrador {
             System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
             return;
         }
-
         centro.agregarPoliticaCancelacion(politica);
         System.out.println("¡Política de cancelación asignada con éxito al centro: " + centro.getNombre() + "!");
     }
@@ -49,12 +46,10 @@ public class Administrador {
             System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
             return;
         }
-
         if (centro.getServicios().contains(servicio)) {
             System.out.println("Error: El centro '" + centro.getNombre() + "' ya ofrece el servicio");
             return;
         }
-
         centro.agregarServicio(servicio);
         System.out.println("¡Servicio registrado con éxito en el centro: " + centro.getNombre() + "!");
     }

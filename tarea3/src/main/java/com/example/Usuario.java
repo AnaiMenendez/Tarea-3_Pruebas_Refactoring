@@ -12,8 +12,8 @@ public class Usuario {
     private String nombre;
     private String correo;
     private String telefono;
-    private List<Reserva> reservas= new ArrayList<>();;
-    private List<Mascota> mascotas= new ArrayList<>();;
+    private List<Reserva> reservas= new ArrayList<>();
+    private List<Mascota> mascotas= new ArrayList<>();
 
     public void registrarMascota(Mascota mascota) {
         if (mascota == null) {
@@ -22,7 +22,7 @@ public class Usuario {
 
         if (!this.mascotas.contains(mascota)) {
             this.mascotas.add(mascota);
-            System.out.println("Mascota '" + mascota.getNombre() + "' registrada con éxito para el usuario " + this.nombre);
+            System.out.println("Mascota '" + mascota.getNombre() + "' registrada con exito para el usuario " + this.nombre);
         } else {
             System.out.println("La mascota ya se encuentra registrada.");
         }
@@ -35,7 +35,7 @@ public class Usuario {
 
         if (!this.reservas.contains(reserva)) {
             this.reservas.add(reserva);
-            System.out.println("Reserva ID: " + reserva.getId() + " añadida al historial del usuario.");
+            System.out.println("Reserva ID: " + reserva.getId() + " anadida al historial del usuario.");
         }
     }
 

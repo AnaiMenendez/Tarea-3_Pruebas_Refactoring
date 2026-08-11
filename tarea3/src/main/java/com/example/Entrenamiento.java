@@ -13,21 +13,16 @@ public class Entrenamiento implements IServicio {
 
     @Override
     public void cambiarEstadoPorFecha(LocalDate fecha, EstadoDisponibilidad nuevoEstado) {
-        if (nuevoEstado == EstadoDisponibilidad.OCUPADO) {
-            historialEstados.put(fecha, EstadoDisponibilidad.OCUPADO);
-        } else {
-            historialEstados.put(fecha, EstadoDisponibilidad.DISPONIBLE);
+        if (fecha != null && nuevoEstado != null) {
+            this.historialEstados.put(fecha, nuevoEstado);
         }
-
     }
 
     @Override
     public boolean verificarDisponibilidad(LocalDate fecha) {
-        
         if (fecha == null) {
             return false;
         }
-
         EstadoDisponibilidad estado =historialEstados.getOrDefault(fecha, EstadoDisponibilidad.DISPONIBLE);
 
         return estado == EstadoDisponibilidad.DISPONIBLE;

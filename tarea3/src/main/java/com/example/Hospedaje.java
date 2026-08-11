@@ -13,7 +13,9 @@ public class Hospedaje implements IServicio {
 
     @Override
     public void cambiarEstadoPorFecha(LocalDate fecha, EstadoDisponibilidad nuevoEstado) {
-        this.historialEstados.put(fecha, nuevoEstado);
+        if (fecha != null && nuevoEstado != null) {
+            this.historialEstados.put(fecha, nuevoEstado);
+        }
     }
 
     @Override

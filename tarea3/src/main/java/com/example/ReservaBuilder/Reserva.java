@@ -27,9 +27,6 @@ public class Reserva {
     private Mascota mascota;
     private Cuidador cuidador;
     private IServicio servicioBasico;
-    private boolean camaraEnVivo;
-    private boolean reporteTiempoReal;
-    private boolean atencionVeterinaria;
     private List<IServicio> servicios = new ArrayList<>();
     private List<LocalDate> fechasAsistencia = new ArrayList<>();
     private List<IObserverReserva> observadores = new ArrayList<>();
@@ -38,37 +35,24 @@ public class Reserva {
     }
 
     public void confirmar() {
-        //this.estado.confirmar(this);
         if(!verificarDisponibilidadServicios()){
-
-            notificarObservadores(
-            "No existen cupos disponibles.");
-
+            notificarObservadores("No existen cupos disponibles.");
             return;
         }
-
 
         cambiarEstadoServicios(EstadoDisponibilidad.OCUPADO);
 
         estado = EstadoReserva.OCUPADO;
 
-
-        notificarObservadores(
-        "Reserva confirmada correctamente.");
-        
+        notificarObservadores("Reserva confirmada correctamente.");
     }
 
     public void cancelar() {
-        //this.estado.cancelar(this);
-        cambiarEstadoServicios(
-        EstadoDisponibilidad.DISPONIBLE);
-
+        cambiarEstadoServicios(EstadoDisponibilidad.DISPONIBLE);
 
         estado = EstadoReserva.CANCELADO;
 
-
-        notificarObservadores(
-        "Reserva cancelada correctamente.");
+        notificarObservadores("Reserva cancelada correctamente.");
     }
 
     public double calcularMonto() {
@@ -179,30 +163,6 @@ public class Reserva {
         }
     }
 
-    public boolean isCamaraEnVivo() {
-        return camaraEnVivo;
-    }
-
-    void setCamaraEnVivo(boolean camaraEnVivo) {
-        this.camaraEnVivo = camaraEnVivo;
-    }
-
-    public boolean isReporteTiempoReal() {
-        return reporteTiempoReal;
-    }
-
-    void setReporteTiempoReal(boolean reporteTiempoReal) {
-        this.reporteTiempoReal = reporteTiempoReal;
-    }
-
-    public boolean isAtencionVeterinaria() {
-        return atencionVeterinaria;
-    }
-
-    void setAtencionVeterinaria(boolean atencionVeterinaria) {
-        this.atencionVeterinaria = atencionVeterinaria;
-    }
-
     public boolean isEsRecurrente() {
         return esRecurrente;
     }
@@ -257,29 +217,15 @@ public class Reserva {
     }
 
     public List<LocalDate> obtenerFechasReserva(){
-
         if(esRecurrente){
-
             return fechasAsistencia;
-
         }
-
-
         List<LocalDate> fechas = new ArrayList<>();
-
-
         LocalDate actual = fechaInicio;
-
-
         while(!actual.isAfter(fechaFin)){
-
             fechas.add(actual);
-
             actual = actual.plusDays(1);
-
         }
-
-
         return fechas;
 }
 

@@ -107,11 +107,7 @@ public class Centro {
         }
         this.paquetes.remove(paquete);
     }
-
-    public void verificarDisponibilidad() {
-        System.out.println("Verificando disponibilidad...");
-    }
-
+    
     public int getId() {
         return id;
     }

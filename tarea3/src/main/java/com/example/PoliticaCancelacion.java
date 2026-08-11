@@ -15,7 +15,8 @@ public class PoliticaCancelacion {
         return horasRestantes >= this.tiempoLimiteHoras;
     }
 
-    public PoliticaCancelacion(int tiempoLimiteHoras) {
+    public PoliticaCancelacion(int tiempoLimiteHoras, double porcentajeReembolso) {
         this.tiempoLimiteHoras = tiempoLimiteHoras;
+        this.porcentajeReembolso = porcentajeReembolso;
     }
 }

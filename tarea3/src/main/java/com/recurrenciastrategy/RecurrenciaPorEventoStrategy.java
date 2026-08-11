@@ -9,7 +9,7 @@ public class RecurrenciaPorEventoStrategy implements IRecurrenciaStrategy {
     private List<LocalDate> fechasDelEvento;
 
     public RecurrenciaPorEventoStrategy(List<LocalDate> fechasDelEvento) {
-        this.fechasDelEvento = fechasDelEvento;
+        this.fechasDelEvento = (fechasDelEvento == null) ? new ArrayList<>() : new ArrayList<>(fechasDelEvento);
     }
 
     @Override

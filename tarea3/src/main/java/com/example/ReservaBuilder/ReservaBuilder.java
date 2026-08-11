@@ -56,24 +56,6 @@ public class ReservaBuilder implements IReservaBuilder {
     }
 
     @Override
-    public IReservaBuilder agregarCamaraEnVivo(boolean activar) {
-        this.reserva.setCamaraEnVivo(activar);
-        return this;
-    }
-
-    @Override
-    public IReservaBuilder agregarReporteTiempoReal(boolean activar) {
-        this.reserva.setReporteTiempoReal(activar);
-        return this;
-    }
-
-    @Override
-    public IReservaBuilder agregarAtencionVeterinaria(boolean activar) {
-        this.reserva.setAtencionVeterinaria(activar);
-        return this;
-    }
-
-    @Override
     public IReservaBuilder agregarServicioComplementario(IServicio servicio) {
         this.reserva.addServicio(servicio);
         return this;
@@ -107,29 +89,19 @@ public class ReservaBuilder implements IReservaBuilder {
         if (reserva.getMascota() == null || reserva.getFechaInicio() == null || reserva.getFechaFin() == null) {
             throw new IllegalStateException("Faltan datos obligatorios (Mascota o Fechas) para construir la reserva.");
         }
-
         if (reserva.getFechaFin().isBefore(reserva.getFechaInicio())) {
             throw new IllegalStateException("La fecha de fin no puede ser anterior a la fecha de inicio.");
         }
-
         if (reserva.getCuidador() != null) {
             boolean disponible = reserva.getCuidador().verificarDisponibilidad(reserva.getFechaInicio());
             if (!disponible) {
                 throw new IllegalStateException("El cuidador seleccionado no está disponible para esa fecha.");
             }
         }
-
         if (reserva.getServicios().isEmpty()) {
-
-            throw new IllegalStateException(
-                    "Debe agregar al menos un servicio.");
-
+            throw new IllegalStateException("Debe agregar al menos un servicio.");
         }
-
         reserva.programarFechasRecurrentes();
-
-        reserva.setEstado(EstadoReserva.EN_ESPERA);
-
         Reserva reservaTerminada = this.reserva;
         this.reset();
         return reservaTerminada;

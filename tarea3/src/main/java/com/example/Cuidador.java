@@ -49,7 +49,7 @@ public class Cuidador {
 
 
     public void atenderMascotas(Mascota mascota) {
-        System.out.println("El cuidador " + this.nombre + " (" + this.especialidad + ") está atendiendo a: " + mascota.getNombre());
+        System.out.println("El cuidador " + this.nombre + " (" + this.especialidad + ") esta atendiendo a: " + mascota.getNombre());
     }
 
     public String generarComentario(Mascota mascota, String observacion) {

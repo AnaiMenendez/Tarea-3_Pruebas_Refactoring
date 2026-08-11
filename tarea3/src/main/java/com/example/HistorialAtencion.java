@@ -19,6 +19,6 @@ public class HistorialAtencion {
     }
 
     public void consultarHistorial() {
-
+        
     }
 }

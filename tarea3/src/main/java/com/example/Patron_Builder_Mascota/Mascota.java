@@ -30,9 +30,7 @@ public class Mascota {
         if (nuevoTamano != null) {
             this.tamano = nuevoTamano;
         }
-        if (nuevaEdad >= 0) {
-            this.edad = nuevaEdad;
-        }
+        this.setEdad(nuevaEdad);
     }
 
     public void agregarNecesidadEspecial(String necesidad){
@@ -92,7 +90,7 @@ public class Mascota {
 
     public void setEdad(int edad) {
         if(edad < 0){
-            throw new IllegalArgumentException("Edad inválida");
+            throw new IllegalArgumentException("Edad invalida");
         }
 
         this.edad = edad;
