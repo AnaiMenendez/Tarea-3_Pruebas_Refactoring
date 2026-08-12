@@ -70,13 +70,8 @@ public class MascotaBuilder implements IMascotaBuilder{
 
     @Override
     public Mascota build() {
-        if (mascota.getNombre() == null || mascota.getNombre().trim().isEmpty()) {
-            throw new IllegalStateException("No se puede registrar una mascota sin nombre.");
-        }
-        if (mascota.getEspecie() == null || mascota.getEspecie().trim().isEmpty()) {
-            throw new IllegalStateException("Debe especificar la especie de la mascota (ej. Perro, Gato).");
-        }
-
+        this.mascota.validarEstadoObligatorio();
+        
         Mascota mascotaConstruida = this.mascota;
         this.reset();
         return mascotaConstruida;

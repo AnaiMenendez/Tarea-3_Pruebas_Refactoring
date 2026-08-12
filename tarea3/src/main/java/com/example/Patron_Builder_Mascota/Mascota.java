@@ -52,6 +52,15 @@ public class Mascota {
         }
     }
 
+    public void validarEstadoObligatorio(){
+        if (this.nombre == null || this.nombre.trim().isEmpty()) {
+            throw new IllegalStateException("No se puede registrar una mascota sin nombre.");
+        }
+        if (this.especie == null || this.especie.trim().isEmpty()) {
+            throw new IllegalStateException("Debe especificar la especie de la mascota.");
+        }
+    }
+
     public int getId() {
         return id;
     }
