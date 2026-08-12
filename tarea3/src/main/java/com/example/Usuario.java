@@ -15,19 +15,6 @@ public class Usuario {
     private List<Reserva> reservas= new ArrayList<>();
     private List<Mascota> mascotas= new ArrayList<>();
 
-    public void registrarMascota(Mascota mascota) {
-        if (mascota == null) {
-            return;
-        }
-
-        if (!this.mascotas.contains(mascota)) {
-            this.mascotas.add(mascota);
-            System.out.println("Mascota '" + mascota.getNombre() + "' registrada con exito para el usuario " + this.nombre);
-        } else {
-            System.out.println("La mascota ya se encuentra registrada.");
-        }
-    }
-
     public void crearReserva(Reserva reserva) {
         if (reserva == null) {
             return;
@@ -39,18 +26,28 @@ public class Usuario {
         }
     }
 
-    public void cancelarReserva(Reserva reserva) {
-        if (reserva == null) {
-            return;
-        }
+    private void notificarUsuario(String mensaje) {
+        System.out.println("[Notificación para " + this.nombre + "]: " + mensaje);
+    }
 
+    public void registrarMascota(Mascota mascota) {
+        if (!this.mascotas.contains(mascota)) {
+            this.mascotas.add(mascota);
+            notificarUsuario("Mascota '" + mascota.getNombre() + "' registrada con éxito.");
+        } else {
+            notificarUsuario("La mascota ya se encuentra registrada.");
+        }
+}
+
+    public void cancelarReserva(Reserva reserva) {
         if (this.reservas.contains(reserva)) {
             reserva.cancelar();
-            System.out.println("La reserva ha sido cancelada desde la cuenta del usuario.");
+            notificarUsuario("La reserva ha sido cancelada desde su cuenta.");
         } else {
-            System.out.println("Error: Esta reserva no pertenece a este usuario.");
+            notificarUsuario("Error: Esta reserva no le pertenece.");
         }
     }
+
 
     public void reportarIncidente(String descripcionIncidente) {
         if (descripcionIncidente == null || descripcionIncidente.trim().isEmpty()) {
