@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.Restriccion;
+import com.example.RestriccionRaza;
 import com.example.TamanoMascota;
 import com.example.Patron_Builder_Mascota.Mascota;
 import com.example.Patron_Builder_Mascota.MascotaBuilder;
@@ -23,12 +24,11 @@ public class RestriccionTest {
                         .setTamano(TamanoMascota.GRANDE)
                         .setEdad(4)
                         .build();
-
+//Creacion de un objeto RestriccionRaza para prueba
+//Antes Restriccion(1,"no se aceptan pitbull")
+//Despues RestriccionRaza(1,"no se aceptan pitbull","pitbull")
         Restriccion restriccion =
-                new Restriccion(
-                        1,
-                        "no se aceptan pitbull"
-                );
+                new RestriccionRaza(1,"no se aceptan pitbull","pitbull");
 
         assertFalse(
                 restriccion.validar(pitbull)
